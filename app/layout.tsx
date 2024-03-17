@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Nabiel Ahammed",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
+      "Full-stack Web Developer and Musician",
     url: "https://nabiel.biz",
     siteName: "nabiel.biz",
     images: [
