@@ -6,19 +6,19 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "Nabiel Ahammed",
+    template: "%s | nabiel.biz",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description: "Full-stack Web Developer and Musician",
   openGraph: {
-    title: "chronark.com",
+    title: "Nabiel Ahammed",
     description:
       "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+    url: "https://nabiel.biz",
+    siteName: "nabiel.biz",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://nabiel.biz/og.png",
         width: 1920,
         height: 1080,
       },
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "eag13",
     card: "summary_large_image",
   },
   icons: {
