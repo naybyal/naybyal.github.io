@@ -4,7 +4,7 @@ import Particles from "./components/particles";
 
 const navigation = [
   // { name: "Projects", href: "/projects" },
-  { name: "Contact", href: "/contact" },
+  // { name: "Contact", href: "/contact" },
 ];
 
 export default function Home() {
@@ -42,7 +42,7 @@ export default function Home() {
             className="underline duration-500 hover:text-zinc-300"
           >
             xtreme-productivity
-          </Link>, an unusual, minimalist productivity app for everyone.
+          </Link>, an unusual yet minimalist productivity app for everyone.
         </h2>
       </div>
     </div>
