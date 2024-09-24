@@ -20,7 +20,7 @@ const words = [
     text: "I'm a",
   },
   {
-    text: "Full-stack",
+    text: "Backend",
   },
   {
     text: "Engineer",
@@ -56,7 +56,7 @@ export default function Home() {
         className="absolute inset-0 -z-10 animate-fade-in"
         quantity={100}
       />
-      <h1 className="z-10 text-2xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text font-regular">
+      <h1 className="z-10 text-2xl text-transparent duration-1000 bg-white cursor-default text-edge-outline animate-title font-display sm:text-6xl md:text-9xl whitespace-nowrap bg-clip-text font-light">
         <TypewriterEffectSmooth words={words} />
       </h1>
 
