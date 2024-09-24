@@ -9,6 +9,7 @@ const navigation = [
 const words = [
   {
     text: "Hi!",
+    
   },
   {
     text: "Nabiel",
@@ -21,15 +22,18 @@ const words = [
   },
   {
     text: "Backend",
+    className: "text-cyan-500",
   },
   {
     text: "Engineer",
+    className: "text-cyan-500",
   },
   {
     text: "and a",
   },
   {
     text: "System Programmer.",
+    className: "text-cyan-500",
   },
 
 
