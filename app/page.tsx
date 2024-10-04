@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Github, Linkedin, Mail, Code, Terminal, User, ChevronRight, LucideIcon } from 'lucide-react'
 import { Button } from "@/components/ui/button"
@@ -20,39 +20,75 @@ const projects = [
   },
   {
     title: "ThrillerQuest (Upcoming Project)",
-    description: `A gamified quest adventure inspired by Kerala's culture and heritage.`,
+    description: "A gamified quest adventure inspired by Kerala's culture and heritage.",
     tech: ["Flutter", "Laravel", "TailwindCSS", "PostgreSQL"]
   },
 ]
-
 
 const skills = [
   "Next.js", "TypeScript", "Rust", "C",
   "JavaScript", "PostgreSQL", "React", "Python",
   "C++", "Java", "MySQL",
-  "Docker", "Bash", "Linux", "Git",
+  "Docker", "Bash", "Linux", "Git", "PHP",
   "TailwindCSS", "Flutter", "Laravel", "PrismaORM",
 ]
 
 export default function Portfolio() {
   const [activeTab, setActiveTab] = useState("projects")
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
+
+  useEffect(() => {
+    const handleMouseMove = (e: MouseEvent) => {
+      setMousePosition({ x: e.clientX, y: e.clientY })
+    }
+
+    window.addEventListener('mousemove', handleMouseMove)
+
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove)
+    }
+  }, [])
+
+  useEffect(() => {
+    setActiveTab(activeTab)
+  }, [activeTab])
 
   return (
-    <div className="min-h-screen bg-black text-white font-mono">
+    <div className="min-h-screen bg-black text-white font-mono relative overflow-hidden">
+      {/* Geometric background elements */}
+      <div className="fixed inset-0 z-0">
+        <motion.div
+          className="absolute top-1/4 left-1/4 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl"
+          animate={{
+            x: mousePosition.x * 0.02,
+            y: mousePosition.y * 0.02,
+          }}
+          transition={{ type: 'spring', damping: 10 }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"
+          animate={{
+            x: mousePosition.x * -0.02,
+            y: mousePosition.y * -0.02,
+          }}
+          transition={{ type: 'spring', damping: 10 }}
+        />
+      </div>
+
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm border-b border-cyan-500/20">
         <nav className="container mx-auto px-4 py-4">
-          <ul className="flex items-center justify-center space-x-6">
-            {/* <AnimatedNavItem href="projects" icon={<Code className="w-4 h-4" />}>Projects</AnimatedNavItem>
-            <AnimatedNavItem href="#skills" icon={<Terminal className="w-4 h-4" />}>Skills</AnimatedNavItem> */}
-            {/* <AnimatedNavItem href="/contact" icon={<User className="w-4 h-4" />}>Profiles</AnimatedNavItem> */}
-          </ul>
+          {/* <ul className="flex items-center justify-center space-x-6">
+            <AnimatedNavItem onClick={() => setActiveTab("projects")} icon={<Code className="w-4 h-4" />}>Projects</AnimatedNavItem>
+            <AnimatedNavItem onClick={() => setActiveTab("skills")} icon={<Terminal className="w-4 h-4" />}>Skills</AnimatedNavItem>
+            <AnimatedNavItem onClick={() => setActiveTab("about")} icon={<User className="w-4 h-4" />}>About</AnimatedNavItem>
+          </ul> */}
         </nav>
       </header>
 
-      <main className="container mx-auto px-4 pt-24 pb-12">
+      <main className="container mx-auto px-4 pt-24 pb-12 relative z-10">
         <section id="hero" className="text-center py-20">
           <motion.h1 
-            className="text-4xl sm:text-5xl font-bold mb-6 tracking-tight"
+            className="text-5xl sm:text-6xl font-bold mb-6 tracking-tight"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -60,7 +96,7 @@ export default function Portfolio() {
             <span className="text-cyan-400">I&apos;m Nabiel Ahammed</span>
           </motion.h1>
           <motion.p 
-            className="text-lg mb-8 text-gray-400"
+            className="text-xl mb-8 text-gray-400"
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
@@ -84,31 +120,32 @@ export default function Portfolio() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.6 }}
         >
-          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-3xl mx-auto">
-            <TabsList className="grid w-full grid-cols-3 bg-black border border-cyan-500/20 rounded-md">
+          <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full max-w-4xl mx-auto">
+            <TabsList className="grid w-full grid-cols-3 bg-black/50 backdrop-blur-md border border-cyan-500/20 rounded-full overflow-hidden">
               <AnimatedTabsTrigger value="projects">Projects</AnimatedTabsTrigger>
               <AnimatedTabsTrigger value="skills">Skills</AnimatedTabsTrigger>
               <AnimatedTabsTrigger value="about">About</AnimatedTabsTrigger>
             </TabsList>
-            <TabsContent value="projects" className="mt-6">
-              <Card className="bg-black border border-cyan-500/20">
+            <TabsContent value="projects" className="mt-8">
+              <Card className="bg-black/70 backdrop-blur-md border border-cyan-500/20">
                 <CardHeader>
-                  <CardTitle className="text-xl text-center text-cyan-400">My Projects</CardTitle>
+                  <CardTitle className="text-2xl text-center text-cyan-400">My Projects</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-4">
+                  <ul className="space-y-8">
                     {projects.map((project, index) => (
                       <motion.li 
                         key={project.title}
                         initial={{ opacity: 0, x: -20 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
+                        className="border border-cyan-500/20 rounded-lg p-4 hover:bg-cyan-950/30 transition-colors"
                       >
-                        <h3 className="text-lg font-semibold text-cyan-400">{project.title}</h3>
-                        <p className="text-gray-400 text-sm">{project.description}</p>
-                        <div className="flex flex-wrap gap-2 mt-2">
+                        <h3 className="text-xl font-semibold text-cyan-400 mb-2">{project.title}</h3>
+                        <p className="text-gray-300 text-sm mb-3">{project.description}</p>
+                        <div className="flex flex-wrap gap-2">
                           {project.tech.map((tech) => (
-                            <span key={tech} className="px-2 py-1 text-xs bg-cyan-950 text-cyan-400 rounded">
+                            <span key={tech} className="px-2 py-1 text-xs bg-cyan-950/50 text-cyan-300 rounded-full">
                               {tech}
                             </span>
                           ))}
@@ -119,14 +156,14 @@ export default function Portfolio() {
                 </CardContent>
               </Card>
             </TabsContent>
-            <TabsContent value="skills" className="mt-6">
-              <Card className="bg-black border border-cyan-500/20">
+            <TabsContent value="skills" className="mt-8">
+              <Card className="bg-black/70 backdrop-blur-md border border-cyan-500/20">
                 <CardHeader>
-                  <CardTitle className="text-xl text-center text-cyan-400">Skills & Technologies</CardTitle>
+                  <CardTitle className="text-2xl text-center text-cyan-400">Skills & Technologies</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <motion.div 
-                    className="flex flex-wrap gap-2"
+                    className="flex flex-wrap justify-center gap-3"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -134,10 +171,11 @@ export default function Portfolio() {
                     {skills.map((skill, index) => (
                       <motion.span 
                         key={skill}
-                        className="px-3 py-1 bg-cyan-950 text-cyan-400 rounded"
+                        className="px-4 py-2 bg-cyan-950/50 text-cyan-300 rounded-full text-sm"
                         initial={{ opacity: 0, scale: 0.9 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.3, delay: index * 0.05 }}
+                        whileHover={{ scale: 1.05, backgroundColor: 'rgba(8, 145, 178, 0.4)' }}
                       >
                         {skill}
                       </motion.span>
@@ -146,14 +184,14 @@ export default function Portfolio() {
                 </CardContent>
               </Card>
             </TabsContent>
-            <TabsContent value="about" className="mt-6">
-              <Card className="bg-black border border-cyan-500/20">
+            <TabsContent value="about" className="mt-8">
+              <Card className="bg-black/70 backdrop-blur-md border border-cyan-500/20">
                 <CardHeader>
-                  <CardTitle className="text-xl text-center text-cyan-400">About Me</CardTitle>
+                  <CardTitle className="text-2xl text-center text-cyan-400">About Me</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <motion.p 
-                    className="text-gray-400 leading-relaxed mb-4"
+                    className="text-gray-300 leading-relaxed mb-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -161,23 +199,24 @@ export default function Portfolio() {
                     As a tech-agnostic programmer with a strong focus on Full-Stack Development and Systems Programming, my passion for technology was sparked early on through my immersion in GNU/Linux. This experience led to a keen interest in Linux Kernel Development. Currently, I'm exploring Rust while developing a SaaS dashboard using Next.js, TypeScript, PostgreSQL, and TailwindCSS.
                   </motion.p>
                   <motion.p 
-                    className="text-gray-400 leading-relaxed mb-4"
+                    className="text-gray-300 leading-relaxed mb-6"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
-                    I’m driven by tackling ambitious and innovative projects, always aiming to push the boundaries of what’s possible.
+                    I'm driven by tackling ambitious and innovative projects, always aiming to push the boundaries of what's possible.
                   </motion.p>
                   <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
+                    className="flex justify-center"
                   >
-                    {/* <Button asChild variant="outline" className="w-full bg-cyan-950 text-cyan-400 border-cyan-500 hover:bg-cyan-900">
-                      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">
-                        View Full Resume <ChevronRight className="ml-2 h-4" />
+                    <Button asChild variant="outline" className="bg-cyan-950/50 text-cyan-300 border-cyan-500/50 hover:bg-cyan-900/50">
+                      <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                        View Full Resume <ChevronRight className="ml-2 h-4 w-4" />
                       </a>
-                    </Button> */}
+                    </Button>
                   </motion.div>
                 </CardContent>
               </Card>
@@ -186,7 +225,7 @@ export default function Portfolio() {
         </motion.div>
       </main>
 
-      <footer className="bg-black/50 backdrop-blur-sm py-6 mt-12 border-t border-cyan-500/20">
+      <footer className="bg-black/50 backdrop-blur-sm py-6 mt-12 border-t border-cyan-500/20 relative z-10">
         <div className="container mx-auto px-4 text-center text-gray-400">
           <p>&copy; 2024 Nabiel. All rights reserved.</p>
         </div>
@@ -196,18 +235,19 @@ export default function Portfolio() {
 }
 
 interface AnimatedNavItemProps {
-  href: string;
+  // href: string;
   icon: React.ReactNode;
   children: React.ReactNode;
+  onClick?: () => void;
 }
 
 function AnimatedNavItem({ href, icon, children }: AnimatedNavItemProps) {
   return (
     <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-      <a href={href} className="flex items-center space-x-1 text-sm text-gray-400 hover:text-cyan-400 transition-colors">
+      <div className="flex items-center space-x-1 text-sm text-gray-400 hover:text-cyan-400 transition-colors">
         {icon}
         <span>{children}</span>
-      </a>
+      </div>
     </motion.li>
   )
 }
@@ -219,7 +259,7 @@ function AnimatedButton({ href, icon, children }:{
 }) {
   return (
     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-      <Button asChild variant="outline" className="bg-cyan-950 text-cyan-400 border-cyan-500 hover:bg-cyan-900">
+      <Button asChild variant="outline" className="bg-cyan-950/50 text-cyan-300 border-cyan-500/50 hover:bg-cyan-900/50">
         <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
           {icon}
           <span>{children}</span>
@@ -233,7 +273,7 @@ function AnimatedTabsTrigger({ value, children }: { value: string; children: Rea
   return (
     <TabsTrigger 
       value={value}
-      className="data-[state=active]:bg-cyan-950 data-[state=active]:text-cyan-400"
+      className="data-[state=active]:bg-cyan-950/70 data-[state=active]:text-cyan-300"
     >
       <motion.span
         whileHover={{ scale: 1.05 }}
