@@ -39,15 +39,15 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-black text-white font-mono">
-      {/* <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm border-b border-cyan-500/20">
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm border-b border-cyan-500/20">
         <nav className="container mx-auto px-4 py-4">
           <ul className="flex items-center justify-center space-x-6">
-            <AnimatedNavItem href="#projects" icon={<Code className="w-4 h-4" />}>Projects</AnimatedNavItem>
-            <AnimatedNavItem href="#skills" icon={<Terminal className="w-4 h-4" />}>Skills</AnimatedNavItem>
-            <AnimatedNavItem href="#about" icon={<User className="w-4 h-4" />}>About</AnimatedNavItem>
+            {/* <AnimatedNavItem href="projects" icon={<Code className="w-4 h-4" />}>Projects</AnimatedNavItem>
+            <AnimatedNavItem href="#skills" icon={<Terminal className="w-4 h-4" />}>Skills</AnimatedNavItem> */}
+            {/* <AnimatedNavItem href="/contact" icon={<User className="w-4 h-4" />}>Profiles</AnimatedNavItem> */}
           </ul>
         </nav>
-      </header> */}
+      </header>
 
       <main className="container mx-auto px-4 pt-24 pb-12">
         <section id="hero" className="text-center py-20">
