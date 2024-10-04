@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, Mail, Code, Terminal, User, ChevronRight } from 'lucide-react'
+import { Github, Linkedin, Mail, Code, Terminal, User, ChevronRight, LucideIcon } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -93,7 +93,7 @@ export default function Portfolio() {
             <TabsContent value="projects" className="mt-6">
               <Card className="bg-black border border-cyan-500/20">
                 <CardHeader>
-                  <CardTitle className="text-xl text-cyan-400">Projects</CardTitle>
+                  <CardTitle className="text-xl text-center text-cyan-400">My Projects</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <ul className="space-y-4">
@@ -122,7 +122,7 @@ export default function Portfolio() {
             <TabsContent value="skills" className="mt-6">
               <Card className="bg-black border border-cyan-500/20">
                 <CardHeader>
-                  <CardTitle className="text-xl text-cyan-400">Skills & Technologies</CardTitle>
+                  <CardTitle className="text-xl text-center text-cyan-400">Skills & Technologies</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <motion.div 
@@ -149,7 +149,7 @@ export default function Portfolio() {
             <TabsContent value="about" className="mt-6">
               <Card className="bg-black border border-cyan-500/20">
                 <CardHeader>
-                  <CardTitle className="text-xl text-cyan-400">About Me</CardTitle>
+                  <CardTitle className="text-xl text-center text-cyan-400">About Me</CardTitle>
                 </CardHeader>
                 <CardContent>
                   <motion.p 
@@ -195,7 +195,13 @@ export default function Portfolio() {
   )
 }
 
-function AnimatedNavItem({ href, icon, children }) {
+interface AnimatedNavItemProps {
+  href: string;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}
+
+function AnimatedNavItem({ href, icon, children }: AnimatedNavItemProps) {
   return (
     <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
       <a href={href} className="flex items-center space-x-1 text-sm text-gray-400 hover:text-cyan-400 transition-colors">
@@ -206,7 +212,11 @@ function AnimatedNavItem({ href, icon, children }) {
   )
 }
 
-function AnimatedButton({ href, icon, children }) {
+function AnimatedButton({ href, icon, children }:{
+  href: string;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) {
   return (
     <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
       <Button asChild variant="outline" className="bg-cyan-950 text-cyan-400 border-cyan-500 hover:bg-cyan-900">
@@ -219,7 +229,7 @@ function AnimatedButton({ href, icon, children }) {
   )
 }
 
-function AnimatedTabsTrigger({ value, children }) {
+function AnimatedTabsTrigger({ value, children }: { value: string; children: React.ReactNode }) {
   return (
     <TabsTrigger 
       value={value}
