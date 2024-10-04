@@ -212,11 +212,11 @@ export default function Portfolio() {
                     transition={{ duration: 0.5, delay: 0.4 }}
                     className="flex justify-center"
                   >
-                    <Button asChild variant="outline" className="bg-cyan-950/50 text-cyan-300 border-cyan-500/50 hover:bg-cyan-900/50">
+                    {/* <Button asChild variant="outline" className="bg-cyan-950/50 text-cyan-300 border-cyan-500/50 hover:bg-cyan-900/50">
                       <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center">
                         View Full Resume <ChevronRight className="ml-2 h-4 w-4" />
                       </a>
-                    </Button>
+                    </Button> */}
                   </motion.div>
                 </CardContent>
               </Card>
