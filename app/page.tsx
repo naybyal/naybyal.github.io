@@ -241,7 +241,7 @@ interface AnimatedNavItemProps {
   onClick?: () => void;
 }
 
-function AnimatedNavItem({ href, icon, children }: AnimatedNavItemProps) {
+function AnimatedNavItem({ icon, children }: AnimatedNavItemProps) {
   return (
     <motion.li whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
       <div className="flex items-center space-x-1 text-sm text-gray-400 hover:text-cyan-400 transition-colors">
