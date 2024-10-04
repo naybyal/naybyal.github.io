@@ -196,7 +196,7 @@ export default function Portfolio() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    As a tech-agnostic programmer with a strong focus on Full-Stack Development and Systems Programming, my passion for technology was sparked early on through my immersion in GNU/Linux. This experience led to a keen interest in Linux Kernel Development. Currently, I'm exploring Rust while developing a SaaS dashboard using Next.js, TypeScript, PostgreSQL, and TailwindCSS.
+                    I’ve been coding since I was young, and my love for tech really took off when I started diving into Linux. I was fascinated by how everything worked under the hood, and I’m excited to explore kernel development in the future. Lately, I’ve been playing around with Rust and building a SaaS dashboard using Next.js, TypeScript, PostgreSQL, and TailwindCSS.
                   </motion.p>
                   <motion.p 
                     className="text-gray-300 leading-relaxed mb-6"
@@ -204,7 +204,7 @@ export default function Portfolio() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
-                    I'm driven by tackling ambitious and innovative projects, always aiming to push the boundaries of what's possible.
+                    I love diving into challenging projects and pushing the limits of what I can do. I'm always looking for new ways to innovate and create something truly groundbreaking.
                   </motion.p>
                   <motion.div 
                     initial={{ opacity: 0, y: 20 }}
