@@ -93,7 +93,7 @@ export default function Portfolio() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="text-cyan-400">I&apos;m Nabiel Ahammed</span>
+            <span className="text-cyan-400">Hi, I&apos;m Nabiel Ahammed!</span>
           </motion.h1>
           <motion.p 
             className="text-xl mb-8 text-gray-400"
@@ -101,7 +101,7 @@ export default function Portfolio() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            Fullstack Developer & System Programming Enthusiast
+            Fullstack Developer & System Programmer
           </motion.p>
           <motion.div 
             className="flex justify-center space-x-4"
@@ -196,7 +196,7 @@ export default function Portfolio() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                   >
-                    I’ve been coding since I was young, and my love for tech really took off when I started diving into Linux. I was fascinated by how everything worked under the hood, and I’m excited to explore kernel development in the future. Lately, I’ve been playing around with Rust and building a SaaS dashboard using Next.js, TypeScript, PostgreSQL, and TailwindCSS.
+                    I&apos;ve been coding since I was young, and my love for tech really took off when I started diving into Linux. I was fascinated by how everything worked under the hood, and I&apos;m excited to explore kernel development in the future. Lately, I&apos;ve been playing around with Rust and building a SaaS dashboard using Next.js, TypeScript, PostgreSQL, and TailwindCSS.
                   </motion.p>
                   <motion.p 
                     className="text-gray-300 leading-relaxed mb-6"
@@ -204,7 +204,7 @@ export default function Portfolio() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                   >
-                    I love diving into challenging projects and pushing the limits of what I can do. I'm always looking for new ways to innovate and create something truly groundbreaking.
+                    I love diving into challenging projects and pushing the limits of what I can do. I&apos;m always looking for new ways to innovate and create something truly groundbreaking.
                   </motion.p>
                   <motion.div 
                     initial={{ opacity: 0, y: 20 }}
@@ -227,7 +227,7 @@ export default function Portfolio() {
 
       <footer className="bg-black/50 backdrop-blur-sm py-6 mt-12 border-t border-cyan-500/20 relative z-10">
         <div className="container mx-auto px-4 text-center text-gray-400">
-          <p>&copy; 2024 Nabiel. All rights reserved.</p>
+          <p>&copy; 2024 Nabiel Ahammed. All rights reserved.</p>
         </div>
       </footer>
     </div>
