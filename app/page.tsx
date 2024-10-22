@@ -77,11 +77,11 @@ export default function Portfolio() {
 
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm border-b border-cyan-500/20">
         <nav className="container mx-auto px-4 py-4">
-          {/* <ul className="flex items-center justify-center space-x-6">
-            <AnimatedNavItem onClick={() => setActiveTab("projects")} icon={<Code className="w-4 h-4" />}>Projects</AnimatedNavItem>
-            <AnimatedNavItem onClick={() => setActiveTab("skills")} icon={<Terminal className="w-4 h-4" />}>Skills</AnimatedNavItem>
-            <AnimatedNavItem onClick={() => setActiveTab("about")} icon={<User className="w-4 h-4" />}>About</AnimatedNavItem>
-          </ul> */}
+          <ul className="flex items-center justify-center space-x-6">
+            <AnimatedNavItem icon={<Code className="w-4 h-4" />}><a href='www.nabielwrites.co'>Visit My Blog!</a></AnimatedNavItem>
+            {/* <AnimatedNavItem onClick={() => setActiveTab("skills")} icon={<Terminal className="w-4 h-4" />}>Skills</AnimatedNavItem>
+            <AnimatedNavItem onClick={() => setActiveTab("about")} icon={<User className="w-4 h-4" />}>About</AnimatedNavItem> */}
+          </ul>
         </nav>
       </header>
 
