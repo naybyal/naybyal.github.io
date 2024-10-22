@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, Mail, Code, Terminal, User, ChevronRight, LucideIcon } from 'lucide-react'
+import { Github, Linkedin, Mail, Code, Terminal, User, ChevronRight, LucideIcon, Pencil } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
@@ -78,7 +78,7 @@ export default function Portfolio() {
       <header className="fixed top-0 left-0 right-0 z-50 bg-black/50 backdrop-blur-sm border-b border-cyan-500/20">
         <nav className="container mx-auto px-4 py-4">
           <ul className="flex items-center justify-center space-x-6">
-            <AnimatedNavItem icon={<Code className="w-4 h-4" />}><a href='www.nabielwrites.co'>Visit My Blog!</a></AnimatedNavItem>
+            <AnimatedNavItem icon={<Pencil className="w-4 h-4" />}><a href='https://www.nabielwrites.co' target='_blank'>Visit My Blog!</a></AnimatedNavItem>
             {/* <AnimatedNavItem onClick={() => setActiveTab("skills")} icon={<Terminal className="w-4 h-4" />}>Skills</AnimatedNavItem>
             <AnimatedNavItem onClick={() => setActiveTab("about")} icon={<User className="w-4 h-4" />}>About</AnimatedNavItem> */}
           </ul>
