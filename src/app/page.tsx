@@ -1,4 +1,4 @@
-import Portfolio from './nov24/portfolio.tsx'
+import Portfolio from './nov24/portfolio'
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
