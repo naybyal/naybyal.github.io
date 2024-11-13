@@ -146,6 +146,15 @@ export default function Portfolio() {
         'Voracious reading across diverse genres'
     ],
     isProgramming: true,
+    learnNewThings() {
+        console.log("Leveling up and locking in!");
+    },
+    buildCoolProjects() {
+        console.log("Crafting projects with passion and precision.");
+    },
+    drinkCoffee() {
+        console.log("Re-energizing with a fresh brew ☕");
+    }
 };
 
 while (nabiel.isProgramming) {
