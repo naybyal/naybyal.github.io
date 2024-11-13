@@ -1,8 +1,10 @@
 'use client'
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, User } from 'lucide-react'
+import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, User, ChevronRight } from 'lucide-react'
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const projects = [
   {
@@ -30,7 +32,7 @@ const skills = [
   "TailwindCSS", "Flutter", "Laravel", "PrismaORM",
 ]
 
-export default function Page() {
+export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("projects")
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
 
@@ -48,6 +50,7 @@ export default function Page() {
 
   return (
     <div className="min-h-screen bg-yellow-50 text-black font-mono relative overflow-hidden">
+      {/* Neo-brutalist background elements */}
       <div className="fixed inset-0 z-0 opacity-50">
         <motion.div
           className="absolute top-1/4 left-1/4 w-64 h-64 bg-red-500 rounded-full mix-blend-multiply filter blur-xl"
@@ -134,22 +137,33 @@ export default function Page() {
               transition={{ duration: 0.5 }}
             >
               <pre className="text-yellow-50 overflow-x-auto">
-                <code>{`const nabiel = {
-  skills: ['TypeScript', 'Rust', 'C', 'Java'],
-  interests: [
-    'Building Enterprise-grade Applications',
-    'Music Composition and Performance',
-    'Voracious reading across diverse genres'
-  ],
-  isProgramming: true,
+                <code>{`
+const nabiel = {
+  skills: ['TypeScript', 'Rust', 'Next.js'],
+  interests: ['System Programming', 'Web Dev'],
+  currentProject: 'Building awesome stuff!',
 };
 
-while (nabiel.isProgramming) {
+while (nabiel.isCoding) {
   nabiel.learnNewThings();
   nabiel.buildCoolProjects();
   nabiel.drinkCoffee();
-}`}</code>
+}
+                `}</code>
               </pre>
+              <motion.div 
+                className="absolute -bottom-4 -right-4 w-20 h-20 bg-yellow-300 rounded-full"
+                animate={{
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 180, 360],
+                }}
+                transition={{
+                  duration: 5,
+                  ease: "easeInOut",
+                  times: [0, 0.5, 1],
+                  repeat: Infinity,
+                }}
+              />
             </motion.div>
           </div>
         </section>
@@ -178,107 +192,142 @@ while (nabiel.isProgramming) {
               </div>
             )}
             {activeSection === "skills" && (
-              <div className="bg-white border-4 border-black shadow-[8px_8px_0_0_#000000] p-6">
-                <h3 className="text-3xl font-bold mb-4">Skills & Technologies</h3>
-                <motion.div 
-                  className="flex flex-wrap gap-3"
-                  variants={containerVariants}
-                  initial="hidden"
-                  animate="visible"
-                >
-                  {skills.map((skill) => (
-                    <motion.span 
-                      key={skill}
-                      className="px-3 py-1 bg-black text-yellow-50 text-sm font-bold transform -skew-x-6 hover:skew-x-0 transition-transform"
-                      variants={itemVariants}
-                      whileHover={{ scale: 1.05, backgroundColor: "#2563EB" }}
-                    >
-                      {skill}
-                    </motion.span>
-                  ))}
-                </motion.div>
-              </div>
+              <Card className="bg-white border-4 border-black shadow-[8px_8px_0_0_#000000]">
+                <CardHeader>
+                  <CardTitle className="text-3xl">Skills & Technologies</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <motion.div 
+                    className="flex flex-wrap gap-3"
+                    variants={containerVariants}
+                    initial="hidden"
+                    animate="visible"
+                  >
+                    {skills.map((skill, index) => (
+                      <motion.span 
+                        key={skill}
+                        className="px-3 py-1 bg-black text-yellow-50 text-sm font-bold transform -skew-x-6 hover:skew-x-0 transition-transform"
+                        variants={itemVariants}
+                        whileHover={{ scale: 1.05, backgroundColor: "#2563EB" }}
+                      >
+                        {skill}
+                      </motion.span>
+                    ))}
+                  </motion.div>
+                </CardContent>
+              </Card>
             )}
             {activeSection === "about" && (
-              <div className="bg-white border-4 border-black shadow-[8px_8px_0_0_#000000] p-6">
-                <h3 className="text-3xl font-bold mb-4">About Me</h3>
-                <div className="prose prose-lg">
-                  <p>
+              <Card className="bg-white border-4 border-black shadow-[8px_8px_0_0_#000000]">
+                <CardHeader>
+                  <CardTitle className="text-3xl">About Me</CardTitle>
+                </CardHeader>
+                <CardContent className="prose prose-lg">
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
                     I&apos;ve been coding since I was young, and my love for tech really took off when I started diving into Linux. I was fascinated by how everything worked under the hood, and I&apos;m excited to explore kernel development in the future.
-                  </p>
-                  <p>
-                    Beyond coding, I&apos;m a musician at heart and a lifelong learner, constantly reading and exploring new fields.
-                  </p>
-                </div>
-              </div>
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                  >
+                    Lately, I&apos;ve been playing around with Rust and building a SaaS dashboard using Next.js, TypeScript, PostgreSQL, and TailwindCSS.
+                  </motion.p>
+                  <motion.p
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                  >
+                    I love diving into challenging projects and pushing the limits of what I can do. I&apos;m always looking for new ways to innovate and create something truly groundbreaking.
+                  </motion.p>
+                </CardContent>
+              </Card>
             )}
           </motion.div>
         </AnimatePresence>
       </main>
+
+      <footer className="bg-black text-yellow-50 mt-12 py-6 text-center">
+        <p>&copy; {new Date().getFullYear()} Nabiel Ahammed. All rights reserved.</p>
+      </footer>
     </div>
   )
 }
 
-const NavItem = ({ icon, children, section, activeSection, setActiveSection }: {
+function AnimatedButton({ href, icon, children }: {
+  href: string;
+  icon: React.ReactNode;
+  children: React.ReactNode;
+}) {
+  return (
+    <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+      <Button asChild variant="outline" className="bg-black text-yellow-50 border-4 border-black hover:bg-yellow-50 hover:text-black font-bold">
+        <a href={href} target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2">
+          {icon}
+          <span>{children}</span>
+        </a>
+      </Button>
+    </motion.div>
+  )
+}
+
+function NavItem({ icon, children, section, activeSection, setActiveSection }: { 
   icon: React.ReactNode;
   children: React.ReactNode;
   section: string;
   activeSection: string;
   setActiveSection: (section: string) => void;
-}) => (
-  <motion.li 
-    className={`flex items-center space-x-2 font-bold cursor-pointer p-2 ${activeSection === section ? 'text-blue-600' : 'text-black'}`}
-    whileHover={{ scale: 1.1 }}
-    onClick={() => setActiveSection(section)}
-  >
-    {icon}
-    <span>{children}</span>
-  </motion.li>
-)
+}) {
+  return (
+    <motion.li
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.98 }}
+      className="flex items-stretch"
+    >
+      <button 
+        onClick={() => setActiveSection(section)}
+        className={`flex items-center justify-center space-x-2 px-6 py-3 font-bold transition-colors duration-200 ${
+          activeSection === section 
+            ? 'bg-black text-yellow-50 border-4 border-black' 
+            : 'bg-yellow-50 text-black border-4 border-black hover:bg-yellow-100'
+        }`}
+      >
+        <span className="w-5 h-5">{icon}</span>
+        <span>{children}</span>
+      </button>
+    </motion.li>
+  )
+}
 
-const AnimatedButton = ({ href, icon, children }: {
-  href: string;
-  icon: React.ReactNode;
-  children: React.ReactNode;
-}) => (
-  <motion.a
-    href={href}
-    target="_blank"
-    rel="noopener noreferrer"
-    className="inline-flex items-center px-4 py-2 bg-black text-yellow-50 border-2 border-black transform -skew-x-6 hover:skew-x-0 transition-transform font-bold"
-    whileHover={{ scale: 1.1, backgroundColor: "#2563EB" }}
-    whileTap={{ scale: 0.9 }}
-  >
-    {icon}
-    <span className="ml-2">{children}</span>
-  </motion.a>
-)
-
-const ProjectCard = ({ project, index }: {
-  project: {
-    title: string;
-    description: string;
-    tech: string[];
-  };
-  index: number;
-}) => (
-  <motion.div
-    className="bg-white border-4 border-black shadow-[8px_8px_0_0_#000000] p-6"
-    initial={{ opacity: 0, y: 20 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ duration: 0.5, delay: index * 0.2 }}
-  >
-    <h3 className="text-2xl font-bold mb-2">{project.title}</h3>
-    <p className="text-base mb-4">{project.description}</p>
-    <div className="flex flex-wrap gap-2">
-      {project.tech.map((tech) => (
-        <span key={tech} className="bg-yellow-100 text-black font-semibold px-3 py-1 text-sm border border-black">
-          {tech}
-        </span>
-      ))}
-    </div>
-  </motion.div>
-)
+function ProjectCard({ project, index }: { project: { title: string; description: string; tech: string[] }; index: number }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <Card className="bg-white border-4 border-black shadow-[8px_8px_0_0_#000000] h-full flex flex-col">
+        <CardHeader>
+          <CardTitle className="text-2xl">{project.title}</CardTitle>
+        </CardHeader>
+        <CardContent className="flex-grow">
+          <CardDescription className="text-base mb-4">{project.description}</CardDescription>
+          <div className="flex flex-wrap gap-2 mt-auto">
+            {project.tech.map((tech) => (
+              <span key={tech} className="px-2 py-1 text-xs bg-black text-yellow-50 font-bold transform -skew-x-6">
+                {tech}
+              </span>
+            ))}
+          </div>
+        </CardContent>
+      </Card>
+    </motion.div>
+  )
+}
 
 const containerVariants = {
   hidden: { opacity: 0 },
