@@ -5,8 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, User, ChevronRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { tomorrow } from 'react-syntax-highlighter/dist/esm/styles/prism';
+
 
 const projects = [
   {
@@ -138,16 +137,7 @@ export default function Portfolio() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <SyntaxHighlighter 
-                language="javascript" 
-                style={tomorrow}
-                customStyle={{
-                  background: 'transparent',
-                  padding: '1rem',
-                  margin: 0,
-                  borderRadius: '0.5rem',
-                }}
-              >
+              
               {`const nabiel = {
   skills: ['TypeScript', 'Rust', 'C', 'Java'],
   interests: [
@@ -163,7 +153,6 @@ while (nabiel.isProgramming) {
   nabiel.buildCoolProjects();
   nabiel.drinkCoffee();
 }`}
-              </SyntaxHighlighter>
               <motion.div 
                 className="absolute -bottom-4 -right-4 w-20 h-20 bg-yellow-300 rounded-full"
                 animate={{
