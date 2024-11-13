@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, User, ChevronRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+
 import type { Metadata } from 'next'
  
 
@@ -147,13 +149,13 @@ export default function Portfolio() {
     ],
     isProgramming: true,
     learnNewThings() {
-        console.log("Leveling up and locking in!");
+        console.log("Leveling up and locking in...");
     },
     buildCoolProjects() {
-        console.log("Crafting projects with passion and precision.");
+        console.log("Crafting projects with passion and precision...");
     },
     drinkCoffee() {
-        console.log("Re-energizing with a fresh brew ☕");
+        console.log("Re-energizing with a fresh brew ☕...");
     }
 };
 
@@ -163,7 +165,7 @@ while (nabiel.isProgramming) {
     nabiel.drinkCoffee();
 }
                 `}</code>
-              </pre>
+              </pre> 
               <motion.div 
                 className="absolute -bottom-4 -right-4 w-20 h-20 bg-yellow-300 rounded-full"
                 animate={{
