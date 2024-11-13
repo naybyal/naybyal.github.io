@@ -139,17 +139,21 @@ export default function Portfolio() {
             >
               <pre className="text-yellow-50 overflow-x-auto">
                 <code>{`
-const nabiel = {
-  skills: ['TypeScript', 'Rust', 'Next.js'],
-  interests: ['System Programming', 'Web Dev'],
-  currentProject: 'Building awesome stuff!',
-};
+                    const nabiel = {
+                        skills: ['TypeScript', 'Rust', 'C', 'Java'],
+                        interests: [
+                            'Building Enterprise-grade Applications',
+                            'Music Composition and Performance',
+                            'Voracious reading across diverse genres'
+                        ],
+                        isProgramming: true,
+                    };
 
-while (nabiel.isCoding) {
-  nabiel.learnNewThings();
-  nabiel.buildCoolProjects();
-  nabiel.drinkCoffee();
-}
+                    while (nabiel.isProgramming) {
+                        nabiel.learnNewThings();
+                        nabiel.buildCoolProjects();
+                        nabiel.drinkCoffee();
+                    }
                 `}</code>
               </pre>
               <motion.div 
