@@ -138,22 +138,21 @@ export default function Portfolio() {
               transition={{ duration: 0.5 }}
             >
               <pre className="text-yellow-50 overflow-x-auto">
-                <code>{`
-                    const nabiel = {
-                        skills: ['TypeScript', 'Rust', 'C', 'Java'],
-                        interests: [
-                            'Building Enterprise-grade Applications',
-                            'Music Composition and Performance',
-                            'Voracious reading across diverse genres'
-                        ],
-                        isProgramming: true,
-                    };
+                <code>{`const nabiel = {
+    skills: ['TypeScript', 'Rust', 'C', 'Java'],
+    interests: [
+        'Building Enterprise-grade Applications',
+        'Music Composition and Performance',
+        'Voracious reading across diverse genres'
+    ],
+    isProgramming: true,
+};
 
-                    while (nabiel.isProgramming) {
-                        nabiel.learnNewThings();
-                        nabiel.buildCoolProjects();
-                        nabiel.drinkCoffee();
-                    }
+while (nabiel.isProgramming) {
+    nabiel.learnNewThings();
+    nabiel.buildCoolProjects();
+    nabiel.drinkCoffee();
+}
                 `}</code>
               </pre>
               <motion.div 
@@ -228,27 +227,33 @@ export default function Portfolio() {
                   <CardTitle className="text-3xl">About Me</CardTitle>
                 </CardHeader>
                 <CardContent className="prose prose-lg">
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    I&apos;ve been coding since I was young, and my love for tech really took off when I started diving into Linux. I was fascinated by how everything worked under the hood, and I&apos;m excited to explore kernel development in the future.
-                  </motion.p>
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                  >
-                    Lately, I&apos;ve been playing around with Rust and building a SaaS dashboard using Next.js, TypeScript, PostgreSQL, and TailwindCSS.
-                  </motion.p>
-                  <motion.p
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.4 }}
-                  >
-                    I love diving into challenging projects and pushing the limits of what I can do. I&apos;m always looking for new ways to innovate and create something truly groundbreaking.
-                  </motion.p>
+                <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mb-6"
+                >
+                I've been coding since I was young, and my passion for technology truly began when I started diving deep into the world of Linux. The way Linux empowers developers to interact with the system at such a low level fascinated me, and I soon realized how much I could accomplish by understanding the inner workings of the OS. This curiosity led me to explore other areas of technology, and now, I'm excited about exploring kernel development in the future and contributing to the evolution of the systems we rely on every day.
+                </motion.p>
+
+                <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="mb-6"
+                >
+                Recently, I've been exploring Rust, a language that has quickly become one of my favorites for system programming. I'm currently building a SaaS dashboard using modern tools such as Next.js, TypeScript, PostgreSQL, and TailwindCSS. This project is helping me hone my full-stack development skills, and I’m especially drawn to Rust's safety and performance features. The intersection of these technologies is allowing me to build high-performance applications while ensuring a smooth user experience.
+                </motion.p>
+
+                <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+                className="mb-6"
+                >
+                I thrive in environments where I can tackle challenging projects that push the boundaries of my skills. Whether it's solving complex problems, optimizing systems, or working on innovative new features, I’m constantly seeking out ways to improve my craft. I believe in continuous learning and always strive to be at the forefront of technology, aiming to create solutions that can make a lasting impact. For me, the process of building something groundbreaking is what drives my passion for tech.
+                </motion.p>
+
                 </CardContent>
               </Card>
             )}
