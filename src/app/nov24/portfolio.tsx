@@ -137,7 +137,7 @@ export default function Portfolio() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              <pre className="text-yellow-50 overflow-x-auto">
+              <pre className="text-yellow-50 text-sm overflow-x-auto">
                 <code>{`const nabiel = {
     skills: ['TypeScript', 'Rust', 'C', 'Java'],
     interests: [
