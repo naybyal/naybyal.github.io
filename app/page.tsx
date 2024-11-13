@@ -6,7 +6,6 @@ import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, User, ChevronRigh
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-
 const projects = [
   {
     title: "solidServe",
@@ -137,22 +136,21 @@ export default function Portfolio() {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.5 }}
             >
-              
-              {`const nabiel = {
-  skills: ['TypeScript', 'Rust', 'C', 'Java'],
-  interests: [
-    'Building Enterprise-grade Applications',
-    'Music Composition and Performance',
-    'Voracious reading across diverse genres'
-  ],
-  isProgramming: true,
+              <pre className="text-yellow-50 overflow-x-auto">
+                <code>{`
+const nabiel = {
+  skills: ['TypeScript', 'Rust', 'Next.js'],
+  interests: ['System Programming', 'Web Dev'],
+  currentProject: 'Building awesome stuff!',
 };
 
-while (nabiel.isProgramming) {
+while (nabiel.isCoding) {
   nabiel.learnNewThings();
   nabiel.buildCoolProjects();
   nabiel.drinkCoffee();
-}`}
+}
+                `}</code>
+              </pre>
               <motion.div 
                 className="absolute -bottom-4 -right-4 w-20 h-20 bg-yellow-300 rounded-full"
                 animate={{
