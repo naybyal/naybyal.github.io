@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 
   },
   icons: {
-    icon: "src/app/assets/favicon.svg"
-  }  
+    icon: 'favicon.ico'
+  } 
   
 };
 
