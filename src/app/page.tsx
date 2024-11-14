@@ -7,10 +7,14 @@ export const metadata: Metadata = {
   keywords: ['Nabiel Ahammed', 'Fullstack Developer', 'System Programmer', 'TypeScript', 'Rust', 'SaaS Development', 'Portfolio'],
   openGraph: {
     title: 'Nabiel Ahammed | Fullstack Developer & System Programmer',
-    description: "Dive into Nabiel Ahammed’s professional portfolio featuring innovative SaaS solutions, expertise in TypeScript, Rust, and system programming.",
+    description: "Visit Nabiel Ahammed’s professional portfolio featuring innovative SaaS solutions, expertise in TypeScript, Rust, and system programming.",
     url: 'https://www.naybyal.vercel.app',
     type: 'website',
+
   },
+  icons: {
+    icon: "./assets/favicon.svg"
+  }  
   
 };
 

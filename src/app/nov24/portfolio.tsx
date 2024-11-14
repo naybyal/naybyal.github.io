@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, User, ChevronRight } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+
 
 import type { Metadata } from 'next'
  
