@@ -5,8 +5,6 @@ import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, User, ChevronRigh
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
-
-import type { Metadata } from 'next'
  
 
 const projects = [
