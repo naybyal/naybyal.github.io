@@ -1,9 +1,10 @@
 'use client'
-import { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, User, ChevronRight } from 'lucide-react'
+import { Github, Linkedin, Mail, ExternalLink, Code, Terminal, User, ChevronRight, Globe } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import Link from 'next/link'
 
  
 
@@ -11,26 +12,40 @@ const projects = [
   {
     title: "solidServe",
     description: "An Accounting SaaS designed for Akshaya Centers, streamlining financial operations and management.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "PrismaORM", "TailwindCSS"]
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "PrismaORM", "TailwindCSS"],
+    link: "https://solidserve-app.vercel.app"
   },
   {
-    title: "Crusty",
-    description: "An educational platform aimed at helping C developers transition seamlessly to Rust, with modern tools and resources.",
-    tech: ["Next.js", "TypeScript", "Rust", "Redis", "TailwindCSS", "Docker", "AWS Lambda"]
+    title: "Corrosion",
+    description: "Context Aware GenAI-based C-to-Rust Transpiler",
+    tech: ["Python", "NetworkX", "Clang"],
+    link: "https://github.com/naybyal/corrosion-engine"
   },
   {
-    title: "ThrillerQuest",
-    description: "A gamified quest adventure inspired by Kerala's culture and heritage.",
-    tech: ["Flutter", "Laravel", "TailwindCSS", "PostgreSQL"]
+    title: "Breeze",
+    description: "A lightweight, Vim-like text editor",
+    tech: ["C"],
+    link: "https://github.com/naybyal/breeze"
   },
+  {
+    title: "Landing Site for Robotics Club, UCE",
+    description: "A landing website for the Robotics Club at University College of Engineering, Thodupuzha",
+    tech: ["HTML", "CSS", "JavaScript"],
+    link: "https://github.com/uceroboticsclub/uceroboticsclub.github.io"
+  }, 
+  {
+    title: "Arxiv Desktop Notifier",
+    description: "A desktop notifier for new papers on Arxiv",
+    tech: ["Python", "feedparser", "platform", "asyncio", "signal"],
+    link: "https://github.com/naybyal/arxiv-desktop-notifier"
+  }
 ]
 
 const skills = [
   "Next.js", "TypeScript", "Rust", "C",
   "JavaScript", "PostgreSQL", "React", "Python",
-  "C++", "Java", "MySQL",
-  "Docker", "Bash", "Linux", "Git", "PHP",
-  "TailwindCSS", "Flutter", "Laravel", "PrismaORM",
+  "C++", "Java", "MySQL", "Bash", "Linux", "Git", "PHP",
+  "TailwindCSS", "Laravel", "PrismaORM",
 ]
 
 export default function Portfolio() {
@@ -110,7 +125,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}
               >
-                Fullstack Developer & System Programmer
+                I'm a Software Developer
               </motion.h2>
               <motion.p 
                 className="text-xl mb-8"
@@ -322,7 +337,7 @@ function NavItem({ icon, children, section, activeSection, setActiveSection }: {
   )
 }
 
-function ProjectCard({ project, index }: { project: { title: string; description: string; tech: string[] }; index: number }) {
+function ProjectCard({ project, index }: { project: { title: string; description: string; tech: string[], link: string }; index: number }) {
   return (
     <motion.div
       initial={{ opacity: 0, y: 50 }}
@@ -330,8 +345,9 @@ function ProjectCard({ project, index }: { project: { title: string; description
       transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <Card className="bg-white border-4 border-black shadow-[8px_8px_0_0_#000000] h-full flex flex-col">
-        <CardHeader>
-          <CardTitle className="text-2xl">{project.title}</CardTitle>
+        <CardHeader className="flex flex-row justify-between">
+          <CardTitle className="text-2xl">{project.title} </CardTitle>
+          <Link target='_blank' href={project.link}><Globe /></Link>
         </CardHeader>
         <CardContent className="flex-grow">
           <CardDescription className="text-base mb-4">{project.description}</CardDescription>
