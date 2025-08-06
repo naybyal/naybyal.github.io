@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Nabiel Ahammed | Fullstack Developer & System Programmer',
     description: "Explore Nabiel Ahammed’s professional portfolio featuring innovative SaaS solutions, expertise in TypeScript, Rust, and system programming.",
-    url: 'https://www.naybyal.vercel.app',
+    url: 'https://www.nabielahammed.com',
     type: 'website',
 
   },
