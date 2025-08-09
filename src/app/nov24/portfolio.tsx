@@ -101,7 +101,7 @@ export default function Portfolio() {
             </li>
             <li>
               <motion.a 
-                href='https://www.nabielwrites.co' 
+                href='https://blog.nabielahammed.com' 
                 target='_blank' 
                 rel="noopener noreferrer"
                 className="hover:text-yellow-300 transition-colors flex items-center"
