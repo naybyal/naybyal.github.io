@@ -24,7 +24,7 @@ export const ContactSection = () => {
        Cirranex Tech Pvt. Ltd. <ExternalLink className="w-3 h-3"/>
       </a>
       <a href="https://www.xerweon.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-background/70 hover:text-background transition-colors duration-300">
-       xerweon™ <ExternalLink className="w-3 h-3"/>
+       Get xerweon™ <ExternalLink className="w-3 h-3"/>
       </a>
      </div>
     </div>
