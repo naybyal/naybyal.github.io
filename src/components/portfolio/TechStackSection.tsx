@@ -1,4 +1,7 @@
+"use client";
+
 import React from 'react';
+import { motion } from 'framer-motion';
 import { 
  SiRust, 
  SiNextdotjs, 
@@ -46,33 +49,65 @@ const coreTools = [
 
 export const TechStackSection = () => {
  return (
-  <section className="py-24 border-t border-border bg-muted">
+  <section className="py-24 border-t border-border bg-muted overflow-hidden">
    <div className="max-w-5xl mx-auto px-6">
-    <div className="mb-16">
+    <motion.div 
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6 }}
+      className="mb-16"
+    >
      <h2 className="text-4xl font-bold tracking-tight text-foreground mb-4">Tech Stack</h2>
      <p className="text-muted-foreground max-w-2xl text-lg">
       The primary tools and frameworks I use to build.
      </p>
-    </div>
+    </motion.div>
 
     <div className="grid md:grid-cols-3 gap-8">
-     {coreTools.map((category) => (
-      <div key={category.category} className="bg-background p-8 border border-border hover:border-foreground transition-colors">
+     {coreTools.map((category, index) => (
+      <motion.div 
+        key={category.category} 
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.5, delay: index * 0.1 }}
+        className="bg-background p-8 border border-border hover:border-foreground transition-colors duration-300"
+      >
        <h3 className="text-xl font-bold text-foreground mb-6">{category.category}</h3>
-       <ul className="space-y-6">
+       <motion.ul 
+         initial="hidden"
+         whileInView="visible"
+         viewport={{ once: true }}
+         variants={{
+           hidden: { opacity: 0 },
+           visible: {
+             opacity: 1,
+             transition: { staggerChildren: 0.1, delayChildren: 0.2 + (index * 0.1) }
+           }
+         }}
+         className="space-y-6"
+       >
         {category.items.map((item) => (
-         <li key={item.name} className="flex items-start gap-4">
+         <motion.li 
+           key={item.name}
+           variants={{
+             hidden: { opacity: 0, x: -10 },
+             visible: { opacity: 1, x: 0, transition: { type: "spring", stiffness: 100 } }
+           }}
+           className="flex items-start gap-4"
+         >
           <div className="mt-1 text-foreground">
            {item.icon}
           </div>
           <div>
-           <div className="font-semibold text-gray-900">{item.name}</div>
+           <div className="font-semibold text-foreground">{item.name}</div>
            <div className="text-xs font-mono text-muted-foreground mt-1">{item.project}</div>
           </div>
-         </li>
+         </motion.li>
         ))}
-       </ul>
-      </div>
+       </motion.ul>
+      </motion.div>
      ))}
     </div>
    </div>

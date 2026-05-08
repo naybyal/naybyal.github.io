@@ -1,28 +1,43 @@
+"use client";
+
 import React from 'react';
 import { ExternalLink, Shield, Database, Workflow, Terminal, Cpu } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const ProjectsSection = () => {
  return (
   <section id="projects" className="py-24 border-t border-border bg-background">
    <div className="max-w-5xl mx-auto px-6">
-    <div className="mb-16">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      transition={{ duration: 0.6, ease: "easeOut" }}
+      className="mb-16"
+    >
      <h2 className="text-4xl font-bold tracking-tight text-foreground mb-4">Selected Works</h2>
      <p className="text-muted-foreground max-w-2xl text-lg">
       Engineering robust solutions focusing on operational digitization, high-performance systems, and developer tooling.
      </p>
-    </div>
+    </motion.div>
 
     <div className="space-y-24">
-     
+
      {/* xerweon */}
-     <div className="group">
+     <motion.div
+       initial={{ opacity: 0, y: 30 }}
+       whileInView={{ opacity: 1, y: 0 }}
+       viewport={{ once: true, margin: "-100px" }}
+       transition={{ duration: 0.7, ease: "easeOut" }}
+       className="group"
+     >
       <div className="flex flex-col lg:flex-row gap-12">
        <div className="lg:w-1/3">
         <div className="sticky top-24">
          <h3 className="text-3xl font-bold text-foreground mb-2 flex items-center gap-0">
           xerweon<sup className="text-lg">™</sup>
          </h3>
-         <a href="https://www.xerweon.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors mb-6">
+         <a href="https://www.xerweon.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors duration-300 mb-6">
           www.xerweon.com <ExternalLink className="w-3 h-3"/>
          </a>
          <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -38,7 +53,7 @@ export const ProjectsSection = () => {
         </div>
        </div>
        <div className="lg:w-2/3 bg-muted border border-border p-8 md:p-12">
-        <h4 className="text-xl font-semibold mb-6">Core Architecture & Features</h4>
+        <h4 className="text-xl font-semibold mb-6">Core Architecture &amp; Features</h4>
         <div className="grid md:grid-cols-2 gap-8">
          <div>
           <Shield className="w-6 h-6 mb-3 text-foreground"/>
@@ -53,15 +68,21 @@ export const ProjectsSection = () => {
         </div>
        </div>
       </div>
-     </div>
+     </motion.div>
 
      {/* Corrosion Engine */}
-     <div className="group border-t border-border pt-24">
+     <motion.div
+       initial={{ opacity: 0, y: 30 }}
+       whileInView={{ opacity: 1, y: 0 }}
+       viewport={{ once: true, margin: "-100px" }}
+       transition={{ duration: 0.7, ease: "easeOut" }}
+       className="group border-t border-border pt-24"
+     >
       <div className="flex flex-col lg:flex-row gap-12">
        <div className="lg:w-1/3">
         <div className="sticky top-24">
          <h3 className="text-3xl font-bold text-foreground mb-2">Corrosion Engine</h3>
-         <a href="/C-to-Rust_GenAI_Transpiler.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors mb-6">
+         <a href="/C-to-Rust_GenAI_Transpiler.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-sm font-mono text-muted-foreground hover:text-foreground transition-colors duration-300 mb-6">
           View Technical Paper (PDF) <ExternalLink className="w-3 h-3"/>
          </a>
          <p className="text-muted-foreground mb-6 leading-relaxed">
@@ -84,10 +105,16 @@ export const ProjectsSection = () => {
         </p>
        </div>
       </div>
-     </div>
+     </motion.div>
 
      {/* solidServe */}
-     <div className="group border-t border-border pt-24">
+     <motion.div
+       initial={{ opacity: 0, y: 30 }}
+       whileInView={{ opacity: 1, y: 0 }}
+       viewport={{ once: true, margin: "-100px" }}
+       transition={{ duration: 0.7, ease: "easeOut" }}
+       className="group border-t border-border pt-24"
+     >
       <div className="flex flex-col lg:flex-row gap-12">
        <div className="lg:w-1/3">
         <div className="sticky top-24">
@@ -114,30 +141,36 @@ export const ProjectsSection = () => {
         </p>
        </div>
       </div>
-     </div>
+     </motion.div>
 
      {/* Smaller Projects Grid */}
-     <div className="border-t border-border pt-24">
+     <motion.div
+       initial={{ opacity: 0, y: 30 }}
+       whileInView={{ opacity: 1, y: 0 }}
+       viewport={{ once: true, margin: "-100px" }}
+       transition={{ duration: 0.7, ease: "easeOut" }}
+       className="border-t border-border pt-24"
+     >
       <h3 className="text-2xl font-bold text-foreground mb-8">Additional Tools</h3>
       <div className="grid md:grid-cols-2 gap-6">
-       <div className="p-6 border border-border hover:border-foreground transition-colors group">
+       <div className="p-6 border border-border hover:border-foreground transition-colors duration-300 group">
         <Terminal className="w-5 h-5 mb-4 text-foreground"/>
         <h4 className="font-semibold text-lg mb-2 flex justify-between items-center">
          Breeze
          <a href="https://github.com/naybyal/breeze" target="_blank" rel="noopener noreferrer">
-          <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors"/>
+          <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors duration-300"/>
          </a>
         </h4>
         <p className="text-sm text-muted-foreground mb-4">A lightweight, highly performant Vim-like text editor written entirely in C.</p>
         <span className="text-xs font-mono bg-muted px-2 py-1">C</span>
        </div>
-       
-       <div className="p-6 border border-border hover:border-foreground transition-colors group">
+
+       <div className="p-6 border border-border hover:border-foreground transition-colors duration-300 group">
         <Database className="w-5 h-5 mb-4 text-foreground"/>
         <h4 className="font-semibold text-lg mb-2 flex justify-between items-center">
          Arxiv Desktop Notifier
          <a href="https://github.com/naybyal/arxiv-desktop-notifier" target="_blank" rel="noopener noreferrer">
-          <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors"/>
+          <ExternalLink className="w-4 h-4 text-muted-foreground group-hover:text-foreground transition-colors duration-300"/>
          </a>
         </h4>
         <p className="text-sm text-muted-foreground mb-4">An asynchronous desktop notification service for monitoring new Arxiv paper publications.</p>
@@ -147,7 +180,7 @@ export const ProjectsSection = () => {
         </div>
        </div>
       </div>
-     </div>
+     </motion.div>
 
     </div>
    </div>

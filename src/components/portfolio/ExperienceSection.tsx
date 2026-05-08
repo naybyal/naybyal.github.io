@@ -1,5 +1,8 @@
+"use client";
+
 import React from 'react';
 import { Award, GraduationCap } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export const ExperienceSection = () => {
  return (
@@ -9,7 +12,12 @@ export const ExperienceSection = () => {
     <div className="grid md:grid-cols-2 gap-16">
      
      {/* Education */}
-     <div>
+     <motion.div
+       initial={{ opacity: 0, y: 30 }}
+       whileInView={{ opacity: 1, y: 0 }}
+       viewport={{ once: true, margin: "-100px" }}
+       transition={{ duration: 0.6, ease: "easeOut" }}
+     >
       <div className="flex items-center gap-3 mb-8">
        <GraduationCap className="w-6 h-6 text-foreground"/>
        <h2 className="text-2xl font-bold text-foreground">Education</h2>
@@ -27,16 +35,21 @@ export const ExperienceSection = () => {
         </div>
        </div>
       </div>
-     </div>
+     </motion.div>
 
      {/* Awards & Recognition */}
-     <div>
+     <motion.div
+       initial={{ opacity: 0, y: 30 }}
+       whileInView={{ opacity: 1, y: 0 }}
+       viewport={{ once: true, margin: "-100px" }}
+       transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+     >
       <div className="flex items-center gap-3 mb-8">
        <Award className="w-6 h-6 text-foreground"/>
        <h2 className="text-2xl font-bold text-foreground">Recognition</h2>
       </div>
       
-      <div className="bg-background border border-border p-8 shadow-sm">
+      <div className="bg-background border border-border p-8 shadow-sm transition-all duration-300 hover:shadow-md hover:border-foreground">
        <div className="inline-block px-3 py-1 bg-foreground text-background text-xs font-mono mb-4">
         YIPGI-28983
        </div>
@@ -46,7 +59,7 @@ export const ExperienceSection = () => {
         Recognized as District Winner under Young Innovators Programme 7.0 (YIP 7.0) for innovation in Data Sciences and Future Technologies. Awarded for the initial prototype (solidServe) that successfully demonstrated operational digitisation within Akshaya Centers, which subsequently evolved into the enterprise platform xerweon™.
        </p>
       </div>
-     </div>
+     </motion.div>
 
     </div>
    </div>

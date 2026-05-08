@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins, JetBrains_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { SmoothScroll } from "@/components/SmoothScroll";
+import { BackToTop } from "@/components/BackToTop";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -64,12 +66,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning>
       <body
         className={`${poppins.variable} ${mono.variable} font-mono antialiased selection:bg-foreground selection:text-background`}
       >
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
-          {children}
+          <SmoothScroll>
+            {children}
+            <BackToTop />
+          </SmoothScroll>
         </ThemeProvider>
       </body>
     </html>
