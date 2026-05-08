@@ -53,10 +53,19 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/favicon.svg', type: 'image/svg+xml' }
+      { url: '/icon0.svg', type: 'image/svg+xml' },
+      { url: '/icon1.png', type: 'image/png', sizes: '96x96' },
+      { url: '/web-app-manifest-192x192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/web-app-manifest-512x512.png', type: 'image/png', sizes: '512x512' },
     ],
-    apple: '/favicon.png',
-  }
+    apple: [
+      { url: '/apple-icon.png', type: 'image/png' },
+    ],
+  },
+  manifest: '/manifest.json',
+  appleWebApp: {
+    title: "Nabiel's Portfolio",
+  },
 };
 
 
