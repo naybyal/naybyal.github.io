@@ -9,7 +9,7 @@ import { ContactSection } from '@/components/portfolio/ContactSection';
 
 const Page = () => {
   return (
-    <main className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
+    <main className="min-h-screen selection:bg-foreground selection:text-background">
       <HeroSection />
       <ExperienceSection />
       <ProjectsSection />

@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 body {
-  font-family: var(--font-poppins), Arial, Helvetica, sans-serif;
-  @apply bg-white text-black;
+  font-family: var(--font-mono), monospace;
 }
 
 @layer utilities {
@@ -15,26 +14,48 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%; /* Pure White */
-    --foreground: 0 0% 0%; /* Pure Black */
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 0%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 0%;
-    --primary: 0 0% 0%; /* Black */
-    --primary-foreground: 0 0% 100%; /* White */
-    --secondary: 0 0% 96%; /* Very light grey for subtle backgrounds */
-    --secondary-foreground: 0 0% 0%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 40%; /* Grey for muted text */
-    --accent: 0 0% 0%;
-    --accent-foreground: 0 0% 100%;
+    --background: 43 33% 96%; /* Vintage Beige */
+    --foreground: 0 0% 10%; /* Warm Black */
+    --card: 43 33% 96%;
+    --card-foreground: 0 0% 10%;
+    --popover: 43 33% 96%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 10%;
+    --primary-foreground: 43 33% 96%;
+    --secondary: 43 20% 90%; /* Darker beige */
+    --secondary-foreground: 0 0% 10%;
+    --muted: 43 20% 90%;
+    --muted-foreground: 0 0% 40%;
+    --accent: 0 0% 10%;
+    --accent-foreground: 43 33% 96%;
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 85%; /* Light grey borders */
-    --input: 0 0% 85%;
-    --ring: 0 0% 0%; /* Black focus ring */
-    --radius: 0rem; /* Sharp corners for formal look */
+    --border: 0 0% 10%; /* Solid black border for vintage look */
+    --input: 0 0% 10%;
+    --ring: 0 0% 10%;
+    --radius: 0rem; /* Sharp corners */
+  }
+
+  .dark {
+    --background: 0 0% 10%; /* Warm Black */
+    --foreground: 43 33% 96%; /* Vintage Beige */
+    --card: 0 0% 10%;
+    --card-foreground: 43 33% 96%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 43 33% 96%;
+    --primary: 43 33% 96%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 15%; /* Lighter warm black */
+    --secondary-foreground: 43 33% 96%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 43 10% 70%;
+    --accent: 43 33% 96%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 43 33% 96%; /* Beige border for vintage look */
+    --input: 43 33% 96%;
+    --ring: 43 33% 96%;
   }
 }
 
