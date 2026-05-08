@@ -1,22 +1,59 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Poppins, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const mono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
-  title: "Nabiel Ahammed | Portfolio",
-  description: "Official Portfolio of Nabiel Ahammed, a Fullstack Developer & System Programmer",
-
+  metadataBase: new URL('https://www.nabielahammed.com'),
+  title: {
+    default: "Nabiel Ahammed | Founder & Lead Systems Engineer",
+    template: "%s | Nabiel Ahammed"
+  },
+  description: "Official Portfolio of Nabiel Ahammed, Founder of Cirranex Tech Pvt. Ltd. and architect of xerweon™. Specializing in high-performance enterprise systems.",
+  keywords: ['Nabiel Ahammed', 'Founder', 'Systems Engineer', 'Cirranex', 'xerweon', 'Rust', 'C', 'Next.js', 'PostgreSQL'],
+  authors: [{ name: 'Nabiel Ahammed' }],
+  creator: 'Nabiel Ahammed',
+  openGraph: {
+    type: 'website',
+    locale: 'en_IN',
+    url: 'https://www.nabielahammed.com',
+    title: 'Nabiel Ahammed | Founder & Lead Systems Engineer',
+    description: "Official Portfolio of Nabiel Ahammed, Founder of Cirranex Tech Pvt. Ltd. and architect of xerweon™.",
+    siteName: 'Nabiel Ahammed Portfolio',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Nabiel Ahammed | Founder & Lead Systems Engineer',
+    description: "Official Portfolio of Nabiel Ahammed, Founder of Cirranex Tech Pvt. Ltd. and architect of xerweon™.",
+    creator: '@naybyal', // Assuming this based on github handle, can be updated
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  icons: {
+    icon: [
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
+    apple: '/favicon.png',
+  }
 };
 
 export default function RootLayout({
@@ -25,12 +62,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <head>
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
-      </head>
+    <html lang="en" className="scroll-smooth">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${poppins.variable} ${mono.variable} font-sans antialiased selection:bg-black selection:text-white`}
       >
         {children}
       </body>

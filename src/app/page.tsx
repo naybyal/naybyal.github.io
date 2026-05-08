@@ -1,28 +1,21 @@
-import Portfolio from './nov24/portfolio'
-import { Metadata } from 'next';
 
-export const metadata: Metadata = {
-  title: 'Nabiel Ahammed | Fullstack Developer & System Programmer',
-  description: "Explore Nabiel Ahammed’s portfolio showcasing innovative projects in TypeScript, Rust, and more!",
-  keywords: ['Nabiel Ahammed', 'Fullstack Developer', 'System Programmer', 'TypeScript', 'Rust', 'SaaS Development', 'Portfolio', 'C'],
-  openGraph: {
-    title: 'Nabiel Ahammed | Fullstack Developer & System Programmer',
-    description: "Explore Nabiel Ahammed’s professional portfolio featuring innovative SaaS solutions, expertise in TypeScript, Rust, and system programming.",
-    url: 'https://www.nabielahammed.com',
-    type: 'website',
+import { HeroSection } from '@/components/portfolio/HeroSection';
+import { ExperienceSection } from '@/components/portfolio/ExperienceSection';
+import { ProjectsSection } from '@/components/portfolio/ProjectsSection';
+import { TechStackSection } from '@/components/portfolio/TechStackSection';
+import { ContactSection } from '@/components/portfolio/ContactSection';
 
-  },
-  icons: {
-    icon: 'favicon.ico'
-  } 
-  
-};
+
 
 const Page = () => {
   return (
-    <>
-      <Portfolio />
-    </>
+    <main className="min-h-screen bg-white text-black selection:bg-black selection:text-white">
+      <HeroSection />
+      <ExperienceSection />
+      <ProjectsSection />
+      <TechStackSection />
+      <ContactSection />
+    </main>
   );
 }
 
